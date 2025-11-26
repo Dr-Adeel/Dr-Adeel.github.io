@@ -1,0 +1,112 @@
+
+body {
+  color: #457485; /*#27586B;*/
+  font: 400 16px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2 {
+  color: #103E50;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+  letter-spacing: .15em;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+a:hover {
+  color: #6D92A0;
+}
+a {
+  color: #103E50;
+}
+
+.married-name {
+  line-height: 5px;
+}
+
+.bio {
+  text-align: justify;
+  word-spacing: .2em;
+}
+
+.info {
+  text-align: center;
+  padding-top:50px;
+}
+
+.pubname {
+  color: #27586B;
+  font-weight: 500;
+}
+
+.confname {
+  font-style: italic;
+}
+
+.student-ad {
+  border: 2px dotted #6D92A0;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 12px;
+  text-align: center;
+}
+
+ul {
+/*  list-style-position: outside;*/
+  list-style-type: none;
+}
+
+.anchor {
+  scroll-margin-top: 70px;
+}
+
+ /* Navigation bar */
+.navigation {
+  overflow: hidden;
+  background-color: #457485;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 9999;
+  width: 960px;
+}
+
+.foto img {
+  border-radius: 20px;
+}
+
+
+/* Links inside the navbar */
+.navigation a {
+  float: left;
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navigation a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 50px; /* Add a top margin to avoid content overlay */
+}
