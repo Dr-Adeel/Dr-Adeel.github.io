@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Oriented Programming - Adeel Ahmad</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/evas_style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../research.html">Research</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../projects.html">Projects</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h1>Object-Oriented Programming</h1>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        Master in Complex Systems Engineering (MISC)
+                    </p>
+                </div>
+                
+                <div class="section-card">
+                    <h2>Course Overview</h2>
+                    <div class="bio">
+                        <p>
+                            Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around 
+                            data, or objects, rather than functions and logic. This course provides a comprehensive introduction 
+                            to OOP concepts and their implementation in Python, one of the most popular and versatile programming 
+                            languages for object-oriented development.
+                        </p>
+                        <p>
+                            The course is designed for students in the Master in Complex Systems Engineering (MISC) program and 
+                            covers fundamental OOP principles, Python-specific implementations, and practical applications through 
+                            hands-on examples and exercises.
+                        </p>
+                    </div>
+
+                    <h2>Core Concepts of Object-Oriented Programming</h2>
+                    <div class="bio">
+                        <p>
+                            Object-Oriented Programming is built upon four fundamental principles that guide the design and 
+                            implementation of software systems:
+                        </p>
+
+                        <h3>1. Encapsulation</h3>
+                        <p>
+                            Encapsulation is the bundling of data and methods that operate on that data within a single unit, 
+                            typically a class. This principle helps to:
+                        </p>
+                        <ul>
+                            <li>Protect data from unauthorized access</li>
+                            <li>Group related data and functions together</li>
+                            <li>Control how data is accessed and modified</li>
+                            <li>Improve code organization and maintainability</li>
+                        </ul>
+                        <p>
+                            In Python, encapsulation is achieved through classes, where attributes and methods are defined together. 
+                            Access modifiers (public, protected, private) can be implemented using naming conventions, though 
+                            Python's philosophy emphasizes "we are all consenting adults here."
+                        </p>
+
+                        <h3>2. Abstraction</h3>
+                        <p>
+                            Abstraction involves hiding complex implementation details and showing only the essential features 
+                            of an object. This principle:
+                        </p>
+                        <ul>
+                            <li>Simplifies complex systems by focusing on what an object does rather than how it does it</li>
+                            <li>Reduces complexity for users of the class</li>
+                            <li>Allows for easier maintenance and updates</li>
+                            <li>Enables separation of interface from implementation</li>
+                        </ul>
+                        <p>
+                            Python supports abstraction through abstract base classes (ABCs) and abstract methods, which can be 
+                            defined using the <code>abc</code> module. This allows developers to create interfaces that must 
+                            be implemented by subclasses.
+                        </p>
+
+                        <h3>3. Inheritance</h3>
+                        <p>
+                            Inheritance is a mechanism where a new class (child class or subclass) can inherit properties and 
+                            methods from an existing class (parent class or superclass). This principle enables:
+                        </p>
+                        <ul>
+                            <li>Code reuse and reduction of redundancy</li>
+                            <li>Creation of hierarchical class structures</li>
+                            <li>Extension of existing functionality</li>
+                            <li>Polymorphic behavior through method overriding</li>
+                        </ul>
+                        <p>
+                            Python supports single and multiple inheritance, allowing a class to inherit from one or more parent 
+                            classes. The <code>super()</code> function is used to call methods from parent classes, and method 
+                            resolution order (MRO) determines how methods are searched in inheritance hierarchies.
+                        </p>
+
+                        <h3>4. Polymorphism</h3>
+                        <p>
+                            Polymorphism is the ability to present the same interface for different data types or classes. This 
+                            principle allows:
+                        </p>
+                        <ul>
+                            <li>Objects of different classes to be treated through the same interface</li>
+                            <li>Method overriding to provide class-specific implementations</li>
+                            <li>Duck typing, where the type is determined by behavior rather than explicit type checking</li>
+                            <li>More flexible and extensible code design</li>
+                        </ul>
+                        <p>
+                            Python's dynamic typing and duck typing philosophy make polymorphism particularly powerful. Methods can 
+                            be overridden in subclasses, and the same method name can work with different object types, as long 
+                            as they implement the required interface.
+                        </p>
+                    </div>
+
+                    <h2>Object-Oriented Programming in Python</h2>
+                    <div class="bio">
+                        <p>
+                            Python is an excellent language for learning and applying OOP concepts due to its clear syntax, 
+                            powerful features, and flexible design. Key aspects of OOP in Python include:
+                        </p>
+
+                        <h3>Classes and Objects</h3>
+                        <p>
+                            In Python, classes are defined using the <code>class</code> keyword. Objects are instances of classes, 
+                            created by calling the class as if it were a function. The <code>__init__</code> method serves as the 
+                            constructor, initializing object attributes when an instance is created.
+                        </p>
+
+                        <h3>Class Variables vs Instance Variables</h3>
+                        <p>
+                            Python distinguishes between class variables (shared by all instances) and instance variables (unique 
+                            to each instance). Class variables are defined at the class level, while instance variables are 
+                            typically defined in the <code>__init__</code> method using <code>self</code>.
+                        </p>
+
+                        <h3>Special Methods (Magic Methods)</h3>
+                        <p>
+                            Python provides special methods (also called magic methods or dunder methods) that allow classes to 
+                            define how they interact with built-in operations. Examples include:
+                        </p>
+                        <ul>
+                            <li><code>__str__</code>: Defines the string representation of an object</li>
+                            <li><code>__repr__</code>: Defines the official string representation</li>
+                            <li><code>__len__</code>: Allows objects to work with the <code>len()</code> function</li>
+                            <li><code>__eq__</code>, <code>__lt__</code>, etc.: Define comparison operations</li>
+                            <li><code>__add__</code>, <code>__sub__</code>, etc.: Define arithmetic operations</li>
+                        </ul>
+
+                        <h3>Property Decorators</h3>
+                        <p>
+                            Python's <code>@property</code> decorator allows methods to be accessed like attributes, providing 
+                            a way to implement getters, setters, and deleters while maintaining a clean interface. This supports 
+                            encapsulation by controlling attribute access.
+                        </p>
+
+                        <h3>Class Methods and Static Methods</h3>
+                        <p>
+                            Python supports class methods (using <code>@classmethod</code>) that receive the class as the first 
+                            argument, and static methods (using <code>@staticmethod</code>) that don't receive any special first 
+                            argument. These provide different ways to organize functionality within a class.
+                        </p>
+
+                        <h3>Multiple Inheritance and Method Resolution Order</h3>
+                        <p>
+                            Python's support for multiple inheritance allows a class to inherit from multiple parent classes. 
+                            The Method Resolution Order (MRO) determines the order in which base classes are searched when 
+                            resolving method calls, using the C3 linearization algorithm.
+                        </p>
+                    </div>
+
+                    <h2>Advanced Topics</h2>
+                    <div class="bio">
+                        <h3>Association, Composition, and Aggregation</h3>
+                        <p>
+                            Beyond the four core principles, OOP also involves understanding relationships between classes:
+                        </p>
+                        <ul>
+                            <li><strong>Association</strong>: A general relationship where objects can interact with each other</li>
+                            <li><strong>Aggregation</strong>: A "has-a" relationship where one object contains another, but the 
+                                contained object can exist independently</li>
+                            <li><strong>Composition</strong>: A stronger "has-a" relationship where the contained object cannot 
+                                exist without the container</li>
+                        </ul>
+                        <p>
+                            These relationships help model real-world scenarios and create more robust and maintainable software 
+                            architectures.
+                        </p>
+
+                        <h3>Abstract Base Classes</h3>
+                        <p>
+                            Python's <code>abc</code> module provides tools for creating abstract base classes. Abstract methods 
+                            must be implemented by subclasses, ensuring that certain interfaces are maintained across class 
+                            hierarchies. This supports both abstraction and polymorphism.
+                        </p>
+
+                        <h3>Design Patterns</h3>
+                        <p>
+                            Understanding OOP principles enables the application of design patterns—reusable solutions to common 
+                            programming problems. Common patterns include Singleton, Factory, Observer, and Strategy patterns, 
+                            among others.
+                        </p>
+                    </div>
+
+                    <h2>Course Materials</h2>
+                    <div class="bio">
+                        <p>
+                            The course includes comprehensive examples and exercises that demonstrate OOP concepts in Python. 
+                            These materials cover:
+                        </p>
+                        <ul>
+                            <li>Basic class definition and object creation</li>
+                            <li>Encapsulation with classes and methods</li>
+                            <li>Inheritance hierarchies and method overriding</li>
+                            <li>Polymorphism through method overriding and duck typing</li>
+                            <li>Abstract classes and interfaces</li>
+                            <li>Class relationships (association, aggregation, composition)</li>
+                            <li>Special methods and operator overloading</li>
+                            <li>Practical examples with vehicles, geometric shapes, and reservation systems</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Illustrative Code Examples:</strong><br>
+                            <a href="../files/MISC_OOP.ipynb" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--primary-color);">
+                                📓 Download Object-Oriented Programming Examples (Jupyter Notebook)
+                            </a>
+                        </p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light); font-size: 0.9rem;">
+                            The notebook contains comprehensive code examples demonstrating all OOP concepts covered in this course, 
+                            including Vehicle classes, inheritance examples, polymorphism demonstrations, and relationship modeling.
+                        </p>
+                    </div>
+
+                    <h2>Learning Objectives</h2>
+                    <div class="bio">
+                        <p>
+                            Upon completion of this course, students will be able to:
+                        </p>
+                        <ul>
+                            <li>Understand and apply the four fundamental principles of OOP</li>
+                            <li>Design and implement classes in Python</li>
+                            <li>Create inheritance hierarchies and understand method resolution</li>
+                            <li>Implement polymorphism through method overriding and duck typing</li>
+                            <li>Use abstraction to create clean, maintainable interfaces</li>
+                            <li>Model relationships between classes (association, aggregation, composition)</li>
+                            <li>Apply OOP principles to solve real-world programming problems</li>
+                            <li>Write Pythonic, object-oriented code following best practices</li>
+                        </ul>
+                    </div>
+
+                    <h2>Assessment</h2>
+                    <div class="bio">
+                        <p>
+                            Course assessment includes practical exercises, programming assignments, and projects that require 
+                            students to design and implement object-oriented solutions to various problems. Students are expected 
+                            to demonstrate understanding of OOP principles through code implementation and documentation.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p>
+                            <a href="../courses.html">← Back to Courses</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
