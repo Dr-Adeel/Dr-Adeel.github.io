@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation Conceptuelle des Bases de Données - Adeel Ahmad</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/evas_style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="container">
+            <a href="../index.html">Accueil</a>
+            <a href="../courses.html">Cours</a>
+            <a href="../research.html">Recherche</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../projects.html">Projets</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h1>Modélisation Conceptuelle des Bases de Données</h1>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        Licence Informatique - Bases de Données 1
+                    </p>
+                </div>
+                
+                <div class="section-card">
+                    <h2>Vue d'ensemble du cours</h2>
+                    <div class="bio">
+                        <p>
+                            La modélisation conceptuelle des bases de données constitue une étape fondamentale dans la conception 
+                            de systèmes d'information. Ce cours introduit les concepts essentiels de la modélisation conceptuelle, 
+                            en mettant l'accent sur le modèle relationnel développé par E.F. Codd, qui a révolutionné la gestion 
+                            des données et reste aujourd'hui le paradigme dominant dans le domaine des bases de données.
+                        </p>
+                        <p>
+                            Ce module couvre les principes de base de la modélisation conceptuelle, l'histoire et les fondements 
+                            théoriques du modèle relationnel, ainsi que les concepts fondamentaux des bases de données et les 
+                            opérations de requête associées.
+                        </p>
+                    </div>
+
+                    <h2>Histoire du Modèle Relationnel d'E.F. Codd</h2>
+                    <div class="bio">
+                        <h3>Edgar Frank Codd (1923-2003)</h3>
+                        <p>
+                            Edgar Frank Codd, né en Angleterre en 1923, est considéré comme le père du modèle relationnel des 
+                            bases de données. Après avoir servi dans la Royal Air Force pendant la Seconde Guerre mondiale, il 
+                            a obtenu un doctorat en informatique à l'Université du Michigan en 1965. Il a ensuite rejoint IBM, 
+                            où il a développé ses idées révolutionnaires sur la gestion des données.
+                        </p>
+
+                        <h3>La Révolution de 1970</h3>
+                        <p>
+                            En 1970, E.F. Codd publie un article fondateur intitulé <strong>"A Relational Model of Data for Large 
+                            Shared Data Banks"</strong> dans la revue <em>Communications of the ACM</em>. Cet article marque un 
+                            tournant décisif dans l'histoire de l'informatique et pose les bases théoriques du modèle relationnel.
+                        </p>
+                        <p>
+                            Avant cette publication, les systèmes de gestion de bases de données (SGBD) utilisaient principalement 
+                            des modèles hiérarchiques ou en réseau, qui présentaient de nombreuses limitations :
+                        </p>
+                        <ul>
+                            <li>Complexité de la navigation dans les données</li>
+                            <li>Dépendance forte entre la structure physique et logique</li>
+                            <li>Difficulté à représenter certaines relations</li>
+                            <li>Manque d'indépendance des données</li>
+                        </ul>
+
+                        <h3>Les Principes Fondamentaux du Modèle Relationnel</h3>
+                        <p>
+                            Codd proposait une approche radicalement différente basée sur la théorie mathématique des relations 
+                            et des ensembles. Les principes clés de son modèle incluent :
+                        </p>
+                        <ul>
+                            <li><strong>Représentation uniforme</strong> : Toutes les données sont représentées sous forme de 
+                                tables (relations) bidimensionnelles</li>
+                            <li><strong>Indépendance des données</strong> : Séparation entre la structure logique et la structure 
+                                physique des données</li>
+                            <li><strong>Opérations mathématiques</strong> : Utilisation d'opérateurs relationnels basés sur 
+                                l'algèbre relationnelle</li>
+                            <li><strong>Intégrité référentielle</strong> : Mécanismes pour garantir la cohérence des données</li>
+                            <li><strong>Normalisation</strong> : Processus d'organisation des données pour éviter la redondance</li>
+                        </ul>
+
+                        <h3>L'Impact et l'Évolution</h3>
+                        <p>
+                            Bien que les idées de Codd aient été initialement accueillies avec scepticisme par certains membres 
+                            de la communauté informatique, elles ont progressivement gagné en reconnaissance. IBM a développé 
+                            System R, un prototype de SGBD relationnel, et d'autres entreprises ont suivi.
+                        </p>
+                        <p>
+                            En 1981, Codd reçoit le prestigieux prix Turing de l'ACM pour ses contributions fondamentales à 
+                            la théorie et à la pratique des bases de données. Le modèle relationnel est devenu le standard 
+                            de l'industrie, avec des systèmes comme Oracle, MySQL, PostgreSQL, et SQL Server qui dominent 
+                            encore aujourd'hui le marché des bases de données.
+                        </p>
+                    </div>
+
+                    <h2>Concepts Fondamentaux des Bases de Données</h2>
+                    <div class="bio">
+                        <h3>Définitions de Base</h3>
+                        <p>
+                            Une <strong>base de données</strong> est une collection organisée de données structurées, généralement 
+                            stockée électroniquement dans un système informatique. Un <strong>système de gestion de bases de 
+                            données (SGBD)</strong> est un logiciel qui permet de créer, gérer et manipuler ces bases de données.
+                        </p>
+
+                        <h3>Le Modèle Relationnel</h3>
+                        <p>
+                            Dans le modèle relationnel, les données sont organisées en <strong>relations</strong> (tables) 
+                            composées de <strong>tuples</strong> (lignes) et d'<strong>attributs</strong> (colonnes). Chaque 
+                            relation possède un nom unique et chaque attribut a un nom et un domaine (type de données).
+                        </p>
+
+                        <h3>Les Concepts Clés</h3>
+                        <ul>
+                            <li><strong>Relation</strong> : Une table bidimensionnelle représentant une entité ou une association</li>
+                            <li><strong>Tuple</strong> : Une ligne dans une relation, représentant une instance d'une entité</li>
+                            <li><strong>Attribut</strong> : Une colonne dans une relation, représentant une propriété d'une entité</li>
+                            <li><strong>Domaine</strong> : L'ensemble des valeurs possibles pour un attribut</li>
+                            <li><strong>Clé primaire</strong> : Un attribut ou un ensemble d'attributs qui identifie de manière 
+                                unique chaque tuple dans une relation</li>
+                            <li><strong>Clé étrangère</strong> : Un attribut dans une relation qui fait référence à la clé 
+                                primaire d'une autre relation</li>
+                            <li><strong>Schéma</strong> : La structure d'une base de données, définissant les relations, 
+                                attributs, et contraintes</li>
+                        </ul>
+
+                        <h3>Intégrité des Données</h3>
+                        <p>
+                            L'intégrité des données garantit la cohérence et la fiabilité des informations stockées. Les 
+                            principales formes d'intégrité incluent :
+                        </p>
+                        <ul>
+                            <li><strong>Intégrité d'entité</strong> : Chaque tuple doit avoir une clé primaire unique et non nulle</li>
+                            <li><strong>Intégrité référentielle</strong> : Les valeurs de clé étrangère doivent correspondre 
+                                à des valeurs existantes dans la relation référencée</li>
+                            <li><strong>Intégrité de domaine</strong> : Les valeurs des attributs doivent respecter les 
+                                contraintes de leur domaine</li>
+                        </ul>
+                    </div>
+
+                    <h2>Modélisation Conceptuelle</h2>
+                    <div class="bio">
+                        <h3>Qu'est-ce que la Modélisation Conceptuelle ?</h3>
+                        <p>
+                            La modélisation conceptuelle est la première étape du processus de conception d'une base de données. 
+                            Elle consiste à créer une représentation abstraite et indépendante de toute implémentation technique 
+                            du domaine d'application. Cette modélisation permet de :
+                        </p>
+                        <ul>
+                            <li>Comprendre et analyser les besoins du système</li>
+                            <li>Identifier les entités, leurs attributs et leurs relations</li>
+                            <li>Communiquer avec les utilisateurs et les parties prenantes</li>
+                            <li>Servir de base pour la modélisation logique et physique</li>
+                        </ul>
+
+                        <h3>Le Modèle Entité-Association (MCD)</h3>
+                        <p>
+                            Le Modèle Conceptuel de Données (MCD), également appelé Modèle Entité-Association (MEA) ou Entity 
+                            Relationship Model (ERM), est le formalisme le plus utilisé pour la modélisation conceptuelle. 
+                            Il a été proposé par Peter Chen en 1976.
+                        </p>
+                        <p>
+                            Les éléments principaux du MCD incluent :
+                        </p>
+                        <ul>
+                            <li><strong>Entité</strong> : Un objet ou concept du monde réel qui peut être distingué des autres</li>
+                            <li><strong>Attribut</strong> : Une propriété descriptive d'une entité</li>
+                            <li><strong>Association/Relation</strong> : Un lien sémantique entre deux ou plusieurs entités</li>
+                            <li><strong>Cardinalité</strong> : Le nombre d'instances d'une entité qui peuvent être associées 
+                                à une instance d'une autre entité</li>
+                        </ul>
+
+                        <h3>Les Cardinalités</h3>
+                        <p>
+                            Les cardinalités définissent les contraintes de participation entre entités :
+                        </p>
+                        <ul>
+                            <li><strong>1:1 (Un à Un)</strong> : Une instance d'une entité est associée à exactement une 
+                                instance de l'autre entité</li>
+                            <li><strong>1:N (Un à Plusieurs)</strong> : Une instance d'une entité peut être associée à 
+                                plusieurs instances de l'autre entité</li>
+                            <li><strong>N:M (Plusieurs à Plusieurs)</strong> : Plusieurs instances d'une entité peuvent être 
+                                associées à plusieurs instances de l'autre entité</li>
+                        </ul>
+                    </div>
+
+                    <h2>Passage au Modèle Logique Relationnel</h2>
+                    <div class="bio">
+                        <h3>Transformation du Modèle Conceptuel</h3>
+                        <p>
+                            Le passage du modèle conceptuel au modèle logique relationnel consiste à transformer le MCD en un 
+                            schéma relationnel. Cette transformation suit des règles précises :
+                        </p>
+                        <ul>
+                            <li><strong>Entité → Relation</strong> : Chaque entité devient une relation (table)</li>
+                            <li><strong>Attribut → Colonne</strong> : Chaque attribut devient une colonne dans la relation</li>
+                            <li><strong>Association 1:N</strong> : La clé primaire de l'entité "1" est ajoutée comme clé étrangère 
+                                dans la relation correspondant à l'entité "N"</li>
+                            <li><strong>Association N:M</strong> : Une nouvelle relation est créée avec les clés primaires des 
+                                deux entités associées</li>
+                            <li><strong>Association 1:1</strong> : La clé primaire d'une entité est ajoutée comme clé étrangère 
+                                dans l'autre entité</li>
+                        </ul>
+
+                        <h3>Normalisation</h3>
+                        <p>
+                            La normalisation est un processus qui consiste à organiser les données dans une base de données pour 
+                            réduire la redondance et améliorer l'intégrité des données. Les formes normales principales sont :
+                        </p>
+                        <ul>
+                            <li><strong>1NF (Première Forme Normale)</strong> : Chaque attribut doit contenir une valeur atomique 
+                                (indivisible)</li>
+                            <li><strong>2NF (Deuxième Forme Normale)</strong> : La relation doit être en 1NF et tous les attributs 
+                                non-clés doivent dépendre fonctionnellement de la clé primaire complète</li>
+                            <li><strong>3NF (Troisième Forme Normale)</strong> : La relation doit être en 2NF et aucun attribut 
+                                non-clé ne doit dépendre transitivement de la clé primaire</li>
+                        </ul>
+                    </div>
+
+                    <h2>Opérations de Requête</h2>
+                    <div class="bio">
+                        <h3>L'Algèbre Relationnelle</h3>
+                        <p>
+                            L'algèbre relationnelle, proposée par Codd, fournit un ensemble d'opérations fondamentales pour 
+                            manipuler les relations. Les opérations de base incluent :
+                        </p>
+                        <ul>
+                            <li><strong>Sélection (σ)</strong> : Sélectionne les tuples qui satisfont une condition</li>
+                            <li><strong>Projection (π)</strong> : Sélectionne certains attributs d'une relation</li>
+                            <li><strong>Union (∪)</strong> : Combine les tuples de deux relations compatibles</li>
+                            <li><strong>Différence (-)</strong> : Retire les tuples d'une relation qui sont présents dans une autre</li>
+                            <li><strong>Produit cartésien (×)</strong> : Combine chaque tuple d'une relation avec chaque tuple 
+                                d'une autre relation</li>
+                            <li><strong>Jointure (⨝)</strong> : Combine des tuples de deux relations sur la base d'une condition</li>
+                        </ul>
+
+                        <h3>Le Calcul Relationnel</h3>
+                        <p>
+                            Le calcul relationnel est une approche déclarative pour interroger les bases de données, où on 
+                            spécifie <em>ce que</em> l'on veut obtenir plutôt que <em>comment</em> l'obtenir. Il existe deux 
+                            variantes :
+                        </p>
+                        <ul>
+                            <li><strong>Calcul relationnel sur les tuples</strong> : Utilise des variables de tuple</li>
+                            <li><strong>Calcul relationnel sur les domaines</strong> : Utilise des variables de domaine</li>
+                        </ul>
+
+                        <h3>SQL (Structured Query Language)</h3>
+                        <p>
+                            SQL est le langage standard pour interroger et manipuler les bases de données relationnelles. 
+                            Développé initialement par IBM dans les années 1970, SQL permet d'effectuer :
+                        </p>
+                        <ul>
+                            <li><strong>Requêtes SELECT</strong> : Récupération de données</li>
+                            <li><strong>Opérations DML</strong> : Insertion (INSERT), modification (UPDATE), suppression (DELETE)</li>
+                            <li><strong>Opérations DDL</strong> : Création (CREATE), modification (ALTER), suppression (DROP) 
+                                de structures</li>
+                            <li><strong>Opérations de contrôle</strong> : Gestion des transactions et des permissions</li>
+                        </ul>
+                    </div>
+
+                    <h2>Matériel de Cours</h2>
+                    <div class="bio">
+                        <p>
+                            Ce cours comprend des exemples pratiques et des exercices qui démontrent les concepts de modélisation 
+                            conceptuelle et les opérations sur les bases de données relationnelles. Le matériel couvre :
+                        </p>
+                        <ul>
+                            <li>Les principes de base de la modélisation conceptuelle</li>
+                            <li>La création et l'analyse de modèles entité-association</li>
+                            <li>La transformation du modèle conceptuel en modèle logique relationnel</li>
+                            <li>La normalisation des relations</li>
+                            <li>Les opérations de l'algèbre relationnelle</li>
+                            <li>L'écriture de requêtes SQL</li>
+                            <li>La gestion de l'intégrité des données</li>
+                        </ul>
+                        <p style="margin-top: 1.5rem;">
+                            <strong>Support de cours détaillé :</strong><br>
+                            <a href="../files/BD1_support.pdf" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--primary-color);">
+                                📄 Télécharger le support de cours BD1 (PDF)
+                            </a>
+                        </p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light); font-size: 0.9rem;">
+                            Le document PDF contient une présentation détaillée de tous les concepts couverts dans ce cours, 
+                            incluant des exemples pratiques, des exercices, et des illustrations des modèles conceptuels et 
+                            logiques.
+                        </p>
+                    </div>
+
+                    <h2>Objectifs d'Apprentissage</h2>
+                    <div class="bio">
+                        <p>
+                            À l'issue de ce cours, les étudiants seront capables de :
+                        </p>
+                        <ul>
+                            <li>Comprendre l'historique et les fondements théoriques du modèle relationnel</li>
+                            <li>Maîtriser les concepts fondamentaux des bases de données relationnelles</li>
+                            <li>Créer et analyser des modèles conceptuels de données (MCD)</li>
+                            <li>Transformer un modèle conceptuel en modèle logique relationnel</li>
+                            <li>Appliquer les règles de normalisation</li>
+                            <li>Utiliser l'algèbre relationnelle pour interroger des bases de données</li>
+                            <li>Écrire des requêtes SQL de base et avancées</li>
+                            <li>Comprendre et garantir l'intégrité des données</li>
+                        </ul>
+                    </div>
+
+                    <h2>Évaluation</h2>
+                    <div class="bio">
+                        <p>
+                            L'évaluation du cours comprend des exercices pratiques, des travaux dirigés sur la modélisation, 
+                            et des projets qui nécessitent la conception et l'implémentation de bases de données relationnelles. 
+                            Les étudiants sont attendus de démontrer leur compréhension des concepts de modélisation conceptuelle 
+                            et logique à travers des réalisations pratiques et de la documentation.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p>
+                            <a href="../courses.html">← Retour aux Cours</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
