@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices and Distributed Systems - Adeel Ahmad</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/evas_style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <a href="../courses.html">Courses</a>
+            <a href="../research.html">Research</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../projects.html">Projects</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h1>Micro-Services based Web Application Design and Development</h1>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        Development of Microservices and Distributed Systems
+                    </p>
+                </div>
+                
+                <div class="section-card">
+                    <h2>Course Overview</h2>
+                    <div class="bio">
+                        <p>
+                            This course provides a comprehensive introduction to microservices architecture and distributed systems 
+                            for web application development. Students will learn to design, develop, and deploy scalable web 
+                            applications using microservices patterns, comparing them with traditional monolithic architectures. 
+                            The course covers practical implementation using Java Spring or Python frameworks, along with modern 
+                            DevOps tools and deployment strategies.
+                        </p>
+                        <p>
+                            The course emphasizes hands-on experience with REST APIs, MVC distributed application architecture, 
+                            containerization with Docker, CI/CD pipelines with GitHub Actions, and deployment on VPS servers. 
+                            Students will gain a deep understanding of the advantages and trade-offs of microservices architecture 
+                            and learn to build robust, scalable distributed systems.
+                        </p>
+                    </div>
+
+                    <h2>Web Services Architecture vs Monolithic Architecture</h2>
+                    <div class="bio">
+                        <h3>Monolithic Architecture</h3>
+                        <p>
+                            A monolithic architecture is a traditional approach where an entire application is built as a single, 
+                            unified unit. All components, including the user interface, business logic, and data access layers, 
+                            are tightly coupled and deployed together as one package.
+                        </p>
+                        <p><strong>Characteristics of Monolithic Architecture:</strong></p>
+                        <ul>
+                            <li>Single codebase and deployment unit</li>
+                            <li>Tightly coupled components</li>
+                            <li>Shared database typically</li>
+                            <li>Simpler development and testing initially</li>
+                            <li>Easier deployment for small applications</li>
+                        </ul>
+                        <p><strong>Limitations:</strong></p>
+                        <ul>
+                            <li>Difficult to scale individual components</li>
+                            <li>Technology stack lock-in</li>
+                            <li>Slower development cycles as application grows</li>
+                            <li>Single point of failure</li>
+                            <li>Difficult to maintain and update large codebases</li>
+                        </ul>
+
+                        <h3>Microservices Architecture</h3>
+                        <p>
+                            Microservices architecture is an approach where an application is built as a collection of small, 
+                            independent services that communicate over well-defined APIs. Each service is responsible for a 
+                            specific business capability and can be developed, deployed, and scaled independently.
+                        </p>
+                        <p><strong>Characteristics of Microservices Architecture:</strong></p>
+                        <ul>
+                            <li>Loosely coupled, independently deployable services</li>
+                            <li>Each service has its own database (database per service pattern)</li>
+                            <li>Technology diversity - each service can use different technologies</li>
+                            <li>Fault isolation - failure in one service doesn't bring down the entire system</li>
+                            <li>Independent scaling of services based on demand</li>
+                            <li>Faster development cycles with smaller teams</li>
+                        </ul>
+                        <p><strong>Advantages:</strong></p>
+                        <ul>
+                            <li>Scalability: Scale individual services based on specific needs</li>
+                            <li>Flexibility: Use the best technology for each service</li>
+                            <li>Resilience: Isolated failures don't cascade</li>
+                            <li>Team autonomy: Small teams can work independently</li>
+                            <li>Continuous deployment: Deploy services independently</li>
+                        </ul>
+                    </div>
+
+                    <h2>REST and MVC Distributed Application Architecture</h2>
+                    <div class="bio">
+                        <h3>REST (Representational State Transfer)</h3>
+                        <p>
+                            REST is an architectural style for designing networked applications. It uses standard HTTP methods 
+                            (GET, POST, PUT, DELETE) and relies on stateless communication between client and server.
+                        </p>
+                        <p><strong>Advantages of REST:</strong></p>
+                        <ul>
+                            <li><strong>Statelessness:</strong> Each request contains all information needed to process it, 
+                                making services easier to scale horizontally</li>
+                            <li><strong>Cacheability:</strong> Responses can be cached to improve performance</li>
+                            <li><strong>Uniform Interface:</strong> Standard HTTP methods provide consistency across services</li>
+                            <li><strong>Layered System:</strong> Architecture can be composed of hierarchical layers</li>
+                            <li><strong>Client-Server Separation:</strong> Clear separation of concerns</li>
+                            <li><strong>Code on Demand (optional):</strong> Servers can extend client functionality</li>
+                        </ul>
+                        <p>
+                            REST APIs enable microservices to communicate effectively, providing a standardized way for services 
+                            to expose their functionality and consume other services' capabilities.
+                        </p>
+
+                        <h3>MVC (Model-View-Controller) in Distributed Systems</h3>
+                        <p>
+                            The MVC pattern can be adapted for distributed microservices architecture, where:
+                        </p>
+                        <ul>
+                            <li><strong>Model:</strong> Business logic and data access within each microservice</li>
+                            <li><strong>View:</strong> API responses (JSON, XML) or separate frontend services</li>
+                            <li><strong>Controller:</strong> REST endpoints that handle HTTP requests and coordinate with models</li>
+                        </ul>
+                        <p>
+                            In a distributed MVC architecture, each microservice implements its own MVC pattern, and services 
+                            communicate through REST APIs. This approach provides:
+                        </p>
+                        <ul>
+                            <li>Clear separation of concerns within each service</li>
+                            <li>Consistent architecture patterns across services</li>
+                            <li>Easier testing and maintenance</li>
+                            <li>Better code organization and readability</li>
+                        </ul>
+                    </div>
+
+                    <h2>Microservices Architecture</h2>
+                    <div class="bio">
+                        <p>
+                            Microservices architecture breaks down applications into small, independent services that work together 
+                            to provide business functionality. Instead of a single, large "monolith," applications are built as 
+                            a collection of small, independent services.
+                        </p>
+
+                        <h3>Decoupling</h3>
+                        <p>
+                            Decoupling is a fundamental principle of microservices architecture. It ensures that services can 
+                            operate and scale independently without tight dependencies on other services.
+                        </p>
+                        <p><strong>Key aspects of decoupling:</strong></p>
+                        <ul>
+                            <li><strong>Independent Deployment:</strong> Services can be deployed without affecting others</li>
+                            <li><strong>Technology Independence:</strong> Each service can use different programming languages, 
+                                frameworks, and databases</li>
+                            <li><strong>Data Independence:</strong> Each service manages its own database</li>
+                            <li><strong>Team Independence:</strong> Different teams can work on different services simultaneously</li>
+                            <li><strong>Failure Isolation:</strong> Problems in one service don't cascade to others</li>
+                        </ul>
+                        <p>
+                            Decoupling is achieved through well-defined APIs, asynchronous communication patterns, and event-driven 
+                            architectures where appropriate.
+                        </p>
+
+                        <h3>API Gateway</h3>
+                        <p>
+                            The API Gateway is the single entry point that routes requests to the appropriate microservices. 
+                            It acts as a reverse proxy, accepting all client requests and routing them to the appropriate backend 
+                            services.
+                        </p>
+                        <p><strong>Functions of an API Gateway:</strong></p>
+                        <ul>
+                            <li><strong>Request Routing:</strong> Directs requests to the correct microservice</li>
+                            <li><strong>Load Balancing:</strong> Distributes requests across multiple instances of a service</li>
+                            <li><strong>Authentication and Authorization:</strong> Centralized security handling</li>
+                            <li><strong>Rate Limiting:</strong> Controls the number of requests per client</li>
+                            <li><strong>Caching:</strong> Stores frequently accessed data to reduce backend load</li>
+                            <li><strong>Request/Response Transformation:</strong> Adapts data formats between client and services</li>
+                            <li><strong>Monitoring and Logging:</strong> Centralized observability</li>
+                        </ul>
+                        <p>
+                            Popular API Gateway solutions include Spring Cloud Gateway, Kong, AWS API Gateway, and NGINX.
+                        </p>
+
+                        <h3>Containerization</h3>
+                        <p>
+                            Containerization involves using tools like Docker to package services along with their dependencies, 
+                            libraries, and configuration files into lightweight, portable containers.
+                        </p>
+                        <p><strong>Benefits of Containerization:</strong></p>
+                        <ul>
+                            <li><strong>Consistency:</strong> Applications run the same way across different environments</li>
+                            <li><strong>Isolation:</strong> Each container runs in its own isolated environment</li>
+                            <li><strong>Portability:</strong> Containers can run on any system that supports Docker</li>
+                            <li><strong>Resource Efficiency:</strong> Containers share the host OS kernel, using fewer resources than VMs</li>
+                            <li><strong>Fast Deployment:</strong> Containers start quickly compared to virtual machines</li>
+                            <li><strong>Version Control:</strong> Container images can be versioned and stored in registries</li>
+                        </ul>
+                        <p>
+                            Docker containers package an application and all its dependencies into a single unit, ensuring that 
+                            the application works consistently regardless of where it's deployed.
+                        </p>
+
+                        <h3>Orchestration</h3>
+                        <p>
+                            Orchestration involves managing those containers at scale, handling deployment, scaling, networking, 
+                            and lifecycle management of containerized applications.
+                        </p>
+                        <p><strong>Orchestration capabilities include:</strong></p>
+                        <ul>
+                            <li><strong>Service Discovery:</strong> Automatically locating services in the network</li>
+                            <li><strong>Load Balancing:</strong> Distributing traffic across service instances</li>
+                            <li><strong>Auto-scaling:</strong> Automatically adjusting the number of service instances based on load</li>
+                            <li><strong>Health Monitoring:</strong> Checking service health and restarting failed containers</li>
+                            <li><strong>Rolling Updates:</strong> Deploying new versions without downtime</li>
+                            <li><strong>Resource Management:</strong> Allocating CPU and memory resources</li>
+                        </ul>
+                        <p>
+                            While Kubernetes is a powerful orchestration platform, for simpler deployments, Docker Compose or 
+                            Docker Swarm can be sufficient. The course focuses on practical deployment strategies suitable for 
+                            VPS servers, which may not require the full complexity of Kubernetes.
+                        </p>
+                    </div>
+
+                    <h2>Distributed Systems</h2>
+                    <div class="bio">
+                        <p>
+                            A distributed system is a computing environment where various components are spread across different 
+                            networks, machines, or locations. These components work together to achieve a common goal, appearing 
+                            to users as a single coherent system.
+                        </p>
+
+                        <h3>Scalability</h3>
+                        <p>
+                            Scalability is the ability of a system to handle growth in terms of users, data volume, or transaction 
+                            load. There are two main approaches to scaling:
+                        </p>
+                        <p><strong>Vertical Scaling (Scaling Up):</strong></p>
+                        <ul>
+                            <li>Adding more resources (CPU, RAM, storage) to existing machines</li>
+                            <li>Simpler to implement but has physical and cost limitations</li>
+                            <li>Single point of failure</li>
+                            <li>Limited by hardware constraints</li>
+                        </ul>
+                        <p><strong>Horizontal Scaling (Scaling Out):</strong></p>
+                        <ul>
+                            <li>Adding more machines to the system</li>
+                            <li>Better suited for distributed systems and microservices</li>
+                            <li>Improved fault tolerance</li>
+                            <li>Can scale almost indefinitely</li>
+                            <li>Requires load balancing and distributed data management</li>
+                        </ul>
+                        <p>
+                            Microservices architecture naturally supports horizontal scaling, as individual services can be scaled 
+                            independently based on their specific load requirements.
+                        </p>
+
+                        <h3>Fault Tolerance</h3>
+                        <p>
+                            Fault tolerance is the system's ability to continue operating even if one or more components fail. 
+                            In distributed systems, failures are inevitable, so designing for fault tolerance is crucial.
+                        </p>
+                        <p><strong>Fault tolerance strategies:</strong></p>
+                        <ul>
+                            <li><strong>Redundancy:</strong> Running multiple instances of critical services</li>
+                            <li><strong>Circuit Breakers:</strong> Preventing cascading failures by stopping requests to failing services</li>
+                            <li><strong>Retry Mechanisms:</strong> Automatically retrying failed operations with exponential backoff</li>
+                            <li><strong>Health Checks:</strong> Monitoring service health and removing unhealthy instances</li>
+                            <li><strong>Graceful Degradation:</strong> Providing reduced functionality when some services are unavailable</li>
+                            <li><strong>Data Replication:</strong> Maintaining copies of data across multiple nodes</li>
+                        </ul>
+                        <p>
+                            Microservices architecture improves fault tolerance by isolating failures to individual services, 
+                            preventing a single failure from bringing down the entire system.
+                        </p>
+
+                        <h3>Consensus Algorithms</h3>
+                        <p>
+                            Consensus algorithms are methods used to achieve agreement on a single data value among distributed 
+                            nodes, even in the presence of failures. They ensure that all nodes in a distributed system agree on 
+                            the same state or decision.
+                        </p>
+                        <p><strong>Common consensus algorithms:</strong></p>
+                        <ul>
+                            <li><strong>Paxos:</strong> One of the first practical consensus algorithms, designed to handle 
+                                failures in asynchronous systems</li>
+                            <li><strong>Raft:</strong> A more understandable alternative to Paxos, designed for understandability 
+                                while maintaining similar safety and performance guarantees</li>
+                            <li><strong>PBFT (Practical Byzantine Fault Tolerance):</strong> Handles Byzantine failures where 
+                                nodes may behave maliciously</li>
+                        </ul>
+                        <p>
+                            These algorithms are fundamental to distributed databases, distributed locks, and leader election in 
+                            distributed systems. They ensure consistency and reliability in distributed environments.
+                        </p>
+
+                        <h3>Eventual Consistency</h3>
+                        <p>
+                            Eventual consistency is a theoretical guarantee that provided no new updates are made to an item, 
+                            eventually all accesses to that item will return the last updated value. This is a relaxation of 
+                            strong consistency that allows for better availability and performance in distributed systems.
+                        </p>
+                        <p><strong>Characteristics of eventual consistency:</strong></p>
+                        <ul>
+                            <li>System may temporarily show inconsistent states</li>
+                            <li>Given enough time without updates, all replicas will converge to the same state</li>
+                            <li>Trade-off between consistency and availability</li>
+                            <li>Common in distributed databases and microservices architectures</li>
+                        </ul>
+                        <p>
+                            Eventual consistency is particularly useful in microservices where each service may have its own 
+                            database, and data synchronization happens asynchronously through events or message queues.
+                        </p>
+
+                        <h3>CAP Theorem</h3>
+                        <p>
+                            The CAP theorem (Consistency, Availability, Partition tolerance) states that in a distributed system, 
+                            you can only guarantee two out of three properties:
+                        </p>
+                        <ul>
+                            <li><strong>Consistency (C):</strong> All nodes see the same data simultaneously</li>
+                            <li><strong>Availability (A):</strong> Every request receives a response (not an error)</li>
+                            <li><strong>Partition Tolerance (P):</strong> System continues to operate despite network failures</li>
+                        </ul>
+                        <p><strong>CAP theorem implications:</strong></p>
+                        <ul>
+                            <li><strong>CA systems:</strong> Traditional databases (MySQL, PostgreSQL) - sacrifice partition 
+                                tolerance, not suitable for distributed systems</li>
+                            <li><strong>CP systems:</strong> Distributed databases prioritizing consistency (MongoDB, HBase) - 
+                                sacrifice availability during partitions</li>
+                            <li><strong>AP systems:</strong> Systems prioritizing availability (Cassandra, CouchDB) - sacrifice 
+                                consistency, use eventual consistency</li>
+                        </ul>
+                        <p>
+                            In practice, most distributed systems must choose between consistency and availability when network 
+                            partitions occur. Microservices architectures often favor availability with eventual consistency, 
+                            using techniques like event sourcing and CQRS (Command Query Responsibility Segregation) to manage 
+                            data consistency.
+                        </p>
+                    </div>
+
+                    <h2>CI/CD with GitHub Actions</h2>
+                    <div class="bio">
+                        <h3>GitHub Actions Overview</h3>
+                        <p>
+                            GitHub Actions is a CI/CD (Continuous Integration/Continuous Deployment) platform that automates 
+                            software workflows directly in your GitHub repository. It enables you to build, test, and deploy 
+                            code automatically when certain events occur.
+                        </p>
+                        <p><strong>Key features of GitHub Actions:</strong></p>
+                        <ul>
+                            <li>Integrated directly into GitHub repositories</li>
+                            <li>Free for public repositories and generous free tier for private repositories</li>
+                            <li>YAML-based workflow configuration</li>
+                            <li>Extensive marketplace of pre-built actions</li>
+                            <li>Supports multiple operating systems and programming languages</li>
+                            <li>Parallel job execution</li>
+                            <li>Matrix builds for testing across multiple versions</li>
+                        </ul>
+
+                        <h3>Advantages of GitHub Actions over Jenkins</h3>
+                        <p>
+                            While Jenkins is a powerful and mature CI/CD tool, GitHub Actions offers several advantages, 
+                            especially for teams already using GitHub:
+                        </p>
+                        <ul>
+                            <li><strong>Native Integration:</strong> Seamlessly integrated with GitHub, no separate server setup required</li>
+                            <li><strong>Easier Setup:</strong> No need to install, configure, or maintain a separate Jenkins server</li>
+                            <li><strong>Cost-Effective:</strong> Free for public repos and competitive pricing for private repos</li>
+                            <li><strong>YAML Configuration:</strong> Workflows are version-controlled alongside code</li>
+                            <li><strong>Faster Startup:</strong> Actions start quickly without waiting for Jenkins agent availability</li>
+                            <li><strong>Built-in Secrets Management:</strong> Secure handling of sensitive data</li>
+                            <li><strong>Better UI/UX:</strong> Modern, intuitive interface integrated into GitHub</li>
+                            <li><strong>Event-Driven:</strong> Triggers on GitHub events (push, PR, issues, etc.)</li>
+                            <li><strong>Container Support:</strong> Native Docker container support</li>
+                            <li><strong>Matrix Strategy:</strong> Easy parallel testing across multiple environments</li>
+                        </ul>
+                        <p>
+                            For microservices projects, GitHub Actions provides a simpler, more maintainable CI/CD solution 
+                            compared to setting up and managing Jenkins infrastructure.
+                        </p>
+
+                        <h3>GitHub Actions vs Kubernetes</h3>
+                        <p>
+                            GitHub Actions and Kubernetes serve different purposes but can work together:
+                        </p>
+                        <ul>
+                            <li><strong>GitHub Actions:</strong> CI/CD pipeline automation (build, test, deploy)</li>
+                            <li><strong>Kubernetes:</strong> Container orchestration and runtime management</li>
+                        </ul>
+                        <p>
+                            For simpler deployments, especially on VPS servers, GitHub Actions combined with Docker provides 
+                            a much simpler solution than Kubernetes. Kubernetes adds significant complexity and is typically 
+                            overkill for small to medium-sized applications. GitHub Actions can build Docker images, run tests, 
+                            and deploy to VPS servers without the need for Kubernetes orchestration.
+                        </p>
+                        <p>
+                            The course focuses on practical, simpler deployment strategies that are easier to understand and 
+                            maintain, making GitHub Actions an ideal choice for CI/CD automation.
+                        </p>
+                    </div>
+
+                    <h2>Docker and Containerization</h2>
+                    <div class="bio">
+                        <h3>Introduction to Docker</h3>
+                        <p>
+                            Docker is a platform for developing, shipping, and running applications in containers. Containers 
+                            package an application with all its dependencies, ensuring it runs consistently across different 
+                            environments.
+                        </p>
+                        <p><strong>Docker components:</strong></p>
+                        <ul>
+                            <li><strong>Dockerfile:</strong> Text file with instructions to build a Docker image</li>
+                            <li><strong>Docker Image:</strong> Read-only template for creating containers</li>
+                            <li><strong>Docker Container:</strong> Running instance of a Docker image</li>
+                            <li><strong>Docker Compose:</strong> Tool for defining and running multi-container applications</li>
+                            <li><strong>Docker Registry:</strong> Repository for storing Docker images (Docker Hub, GitHub Container Registry)</li>
+                        </ul>
+
+                        <h3>Benefits for Microservices</h3>
+                        <p>
+                            Docker is particularly well-suited for microservices architecture:
+                        </p>
+                        <ul>
+                            <li>Each microservice can be containerized independently</li>
+                            <li>Consistent environments from development to production</li>
+                            <li>Easy scaling by running multiple container instances</li>
+                            <li>Isolation between services</li>
+                            <li>Simplified dependency management</li>
+                            <li>Fast deployment and rollback capabilities</li>
+                        </ul>
+
+                        <h3>Docker Compose for Multi-Service Applications</h3>
+                        <p>
+                            Docker Compose allows you to define and run multi-container Docker applications using a YAML file. 
+                            It's perfect for local development and simpler production deployments, especially on VPS servers.
+                        </p>
+                        <p>
+                            With Docker Compose, you can define all your microservices, databases, message queues, and other 
+                            dependencies in a single file, making it easy to start, stop, and manage the entire application stack.
+                        </p>
+                    </div>
+
+                    <h2>Deployment on VPS Server</h2>
+                    <div class="bio">
+                        <h3>VPS Deployment Strategy</h3>
+                        <p>
+                            Deploying microservices on a VPS (Virtual Private Server) provides a cost-effective solution for 
+                            hosting distributed applications. This approach is simpler than Kubernetes while still providing 
+                            the benefits of containerization and microservices architecture.
+                        </p>
+                        <p><strong>Deployment workflow:</strong></p>
+                        <ul>
+                            <li>Build Docker images for each microservice</li>
+                            <li>Push images to a container registry (Docker Hub, GitHub Container Registry)</li>
+                            <li>Pull images on the VPS server</li>
+                            <li>Use Docker Compose or Docker Swarm to orchestrate services</li>
+                            <li>Configure reverse proxy (Nginx) for routing and load balancing</li>
+                            <li>Set up SSL certificates (Let's Encrypt) for HTTPS</li>
+                            <li>Configure monitoring and logging</li>
+                        </ul>
+
+                        <h3>Advantages of VPS Deployment</h3>
+                        <ul>
+                            <li>Cost-effective compared to cloud orchestration platforms</li>
+                            <li>Full control over the server environment</li>
+                            <li>Simpler than Kubernetes for small to medium applications</li>
+                            <li>Suitable for learning and understanding deployment concepts</li>
+                            <li>Can scale vertically or horizontally as needed</li>
+                        </ul>
+
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Use environment variables for configuration</li>
+                            <li>Implement health checks for services</li>
+                            <li>Set up automated backups</li>
+                            <li>Configure firewall rules properly</li>
+                            <li>Use reverse proxy for SSL termination and routing</li>
+                            <li>Implement logging and monitoring</li>
+                            <li>Use Docker volumes for persistent data</li>
+                        </ul>
+                    </div>
+
+                    <h2>Implementation Technologies</h2>
+                    <div class="bio">
+                        <h3>Java Spring Framework</h3>
+                        <p>
+                            Spring Boot and Spring Cloud provide excellent support for building microservices:
+                        </p>
+                        <ul>
+                            <li><strong>Spring Boot:</strong> Rapid application development framework</li>
+                            <li><strong>Spring Cloud:</strong> Tools for building distributed systems and microservices</li>
+                            <li><strong>Spring Cloud Gateway:</strong> API Gateway implementation</li>
+                            <li><strong>Spring Cloud Config:</strong> Centralized configuration management</li>
+                            <li><strong>Spring Cloud Netflix:</strong> Service discovery, circuit breakers, load balancing</li>
+                            <li><strong>Spring Data:</strong> Simplified data access</li>
+                            <li><strong>Spring Security:</strong> Authentication and authorization</li>
+                        </ul>
+
+                        <h3>Python Frameworks</h3>
+                        <p>
+                            Python offers several frameworks suitable for microservices development:
+                        </p>
+                        <ul>
+                            <li><strong>FastAPI:</strong> Modern, fast web framework for building APIs</li>
+                            <li><strong>Flask:</strong> Lightweight, flexible framework</li>
+                            <li><strong>Django:</strong> Full-featured framework with REST framework extension</li>
+                            <li><strong>Celery:</strong> Distributed task queue for asynchronous processing</li>
+                            <li><strong>Redis:</strong> In-memory data store for caching and message queuing</li>
+                        </ul>
+                        <p>
+                            Both Java Spring and Python frameworks are covered in the course, allowing students to choose based 
+                            on their preferences and project requirements.
+                        </p>
+                    </div>
+
+                    <h2>Learning Objectives</h2>
+                    <div class="bio">
+                        <p>
+                            Upon completion of this course, students will be able to:
+                        </p>
+                        <ul>
+                            <li>Understand the differences between monolithic and microservices architectures</li>
+                            <li>Design and implement RESTful APIs for microservices</li>
+                            <li>Apply MVC patterns in distributed application architecture</li>
+                            <li>Containerize applications using Docker</li>
+                            <li>Set up CI/CD pipelines with GitHub Actions</li>
+                            <li>Deploy microservices on VPS servers</li>
+                            <li>Understand and apply microservices principles (decoupling, API Gateway, containerization, orchestration)</li>
+                            <li>Design distributed systems with scalability and fault tolerance in mind</li>
+                            <li>Understand consensus algorithms, eventual consistency, and the CAP theorem</li>
+                            <li>Implement service communication patterns</li>
+                            <li>Apply best practices for microservices development and deployment</li>
+                        </ul>
+                    </div>
+
+                    <h2>Assessment</h2>
+                    <div class="bio">
+                        <p>
+                            Course assessment includes practical projects where students design and implement a microservices-based 
+                            web application. Projects require students to:
+                        </p>
+                        <ul>
+                            <li>Design a microservices architecture for a real-world application</li>
+                            <li>Implement multiple microservices using Java Spring or Python</li>
+                            <li>Set up REST APIs and service communication</li>
+                            <li>Containerize services with Docker</li>
+                            <li>Configure CI/CD pipelines with GitHub Actions</li>
+                            <li>Deploy the application on a VPS server</li>
+                            <li>Document the architecture and deployment process</li>
+                        </ul>
+                        <p>
+                            Students are expected to demonstrate understanding of microservices principles, distributed systems 
+                            concepts, and practical deployment skills through their project implementations.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p>
+                            <a href="../courses.html">← Back to Courses</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

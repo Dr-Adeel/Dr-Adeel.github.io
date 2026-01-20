@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement Continu / Intégration Continue - Adeel Ahmad</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/evas_style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="container">
+            <a href="../index.html">Accueil</a>
+            <a href="../courses.html">Cours</a>
+            <a href="../research.html">Recherche</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../projects.html">Projets</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h1>Développement Continu / Intégration Continue (CI/CD)</h1>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        Framework Java Spring et GitHub Actions
+                    </p>
+                </div>
+                
+                <div class="section-card">
+                    <h2>Vue d'ensemble du cours</h2>
+                    <div class="bio">
+                        <p>
+                            Ce cours offre une introduction complète aux pratiques de Développement Continu (Continuous Development) 
+                            et d'Intégration Continue (Continuous Integration), avec un focus particulier sur l'implémentation 
+                            avec le framework Java Spring et l'utilisation de GitHub Actions pour l'automatisation des pipelines 
+                            CI/CD.
+                        </p>
+                        <p>
+                            Les étudiants apprendront à concevoir, configurer et maintenir des pipelines CI/CD efficaces pour des 
+                            applications Spring Boot, en automatisant les processus de build, test, et déploiement. Le cours 
+                            couvre les meilleures pratiques de l'industrie, les outils modernes, et les stratégies de déploiement 
+                            automatisé.
+                        </p>
+                    </div>
+
+                    <h2>Introduction au CI/CD</h2>
+                    <div class="bio">
+                        <h3>Qu'est-ce que l'Intégration Continue (CI) ?</h3>
+                        <p>
+                            L'Intégration Continue (Continuous Integration) est une pratique de développement logiciel où les 
+                            développeurs intègrent fréquemment leur code dans un dépôt partagé, idéalement plusieurs fois par jour. 
+                            Chaque intégration déclenche automatiquement un build et des tests automatisés pour détecter rapidement 
+                            les erreurs d'intégration.
+                        </p>
+                        <p><strong>Principes fondamentaux de l'Intégration Continue :</strong></p>
+                        <ul>
+                            <li><strong>Commits fréquents :</strong> Intégrer le code dans le dépôt principal aussi souvent que possible</li>
+                            <li><strong>Build automatisé :</strong> Chaque commit déclenche automatiquement un build</li>
+                            <li><strong>Tests automatisés :</strong> Exécution automatique de la suite de tests à chaque build</li>
+                            <li><strong>Feedback rapide :</strong> Notification immédiate en cas d'échec du build ou des tests</li>
+                            <li><strong>Build rapide :</strong> Les builds doivent être rapides pour ne pas bloquer le développement</li>
+                            <li><strong>Environnement de test reproductible :</strong> Utiliser des environnements identiques pour tous les tests</li>
+                        </ul>
+                        <p><strong>Avantages de l'Intégration Continue :</strong></p>
+                        <ul>
+                            <li>Détection précoce des bugs et des problèmes d'intégration</li>
+                            <li>Réduction du temps nécessaire pour intégrer de nouvelles fonctionnalités</li>
+                            <li>Amélioration de la qualité du code grâce aux tests automatisés</li>
+                            <li>Confiance accrue dans le code déployé</li>
+                            <li>Documentation automatique de l'état du projet</li>
+                            <li>Facilitation de la collaboration entre développeurs</li>
+                        </ul>
+
+                        <h3>Qu'est-ce que le Déploiement Continu (CD) ?</h3>
+                        <p>
+                            Le Déploiement Continu (Continuous Deployment) est une extension de l'Intégration Continue qui automatise 
+                            le déploiement des applications en production après chaque build réussi. Le Déploiement Continu permet 
+                            de livrer rapidement de nouvelles fonctionnalités aux utilisateurs finaux.
+                        </p>
+                        <p><strong>Différence entre Continuous Delivery et Continuous Deployment :</strong></p>
+                        <ul>
+                            <li><strong>Continuous Delivery :</strong> Le code est toujours dans un état déployable, mais le 
+                                déploiement en production nécessite une intervention manuelle</li>
+                            <li><strong>Continuous Deployment :</strong> Le déploiement en production est entièrement automatisé 
+                                après chaque build réussi</li>
+                        </ul>
+                        <p><strong>Avantages du Déploiement Continu :</strong></p>
+                        <ul>
+                            <li>Livraison rapide de nouvelles fonctionnalités</li>
+                            <li>Réduction du temps entre le développement et la mise en production</li>
+                            <li>Déploiements plus fréquents et plus petits, réduisant les risques</li>
+                            <li>Feedback rapide des utilisateurs</li>
+                            <li>Réduction des erreurs de déploiement manuel</li>
+                            <li>Amélioration de la réactivité aux besoins du marché</li>
+                        </ul>
+
+                        <h3>Le Pipeline CI/CD</h3>
+                        <p>
+                            Un pipeline CI/CD est une série d'étapes automatisées qui transforment le code source en une application 
+                            déployée. Un pipeline typique comprend :
+                        </p>
+                        <ul>
+                            <li><strong>Source :</strong> Récupération du code depuis le dépôt (Git, SVN, etc.)</li>
+                            <li><strong>Build :</strong> Compilation du code source en artefacts exécutables</li>
+                            <li><strong>Test :</strong> Exécution de tests unitaires, d'intégration, et de bout en bout</li>
+                            <li><strong>Quality Assurance :</strong> Analyse statique du code, vérification de la couverture de tests</li>
+                            <li><strong>Package :</strong> Création d'artefacts déployables (JAR, WAR, Docker images, etc.)</li>
+                            <li><strong>Deploy (Staging) :</strong> Déploiement dans un environnement de staging</li>
+                            <li><strong>Test (Staging) :</strong> Tests supplémentaires dans l'environnement de staging</li>
+                            <li><strong>Deploy (Production) :</strong> Déploiement en production (automatique ou manuel selon la stratégie)</li>
+                        </ul>
+                    </div>
+
+                    <h2>CI/CD avec Java Spring Framework</h2>
+                    <div class="bio">
+                        <h3>Spring Boot et CI/CD</h3>
+                        <p>
+                            Spring Boot est particulièrement bien adapté aux pratiques CI/CD grâce à ses caractéristiques :
+                        </p>
+                        <ul>
+                            <li><strong>Convention over Configuration :</strong> Configuration minimale nécessaire</li>
+                            <li><strong>Embedded Server :</strong> Serveur intégré (Tomcat, Jetty) facilitant le packaging</li>
+                            <li><strong>Profiles :</strong> Gestion de différentes configurations pour différents environnements</li>
+                            <li><strong>Actuator :</strong> Endpoints de monitoring et de gestion de l'application</li>
+                            <li><strong>Testing Support :</strong> Support complet pour les tests avec Spring Test</li>
+                            <li><strong>Dependency Management :</strong> Gestion automatique des versions de dépendances</li>
+                        </ul>
+
+                        <h3>Structure d'un Projet Spring Boot pour CI/CD</h3>
+                        <p>
+                            Un projet Spring Boot bien structuré pour CI/CD doit inclure :
+                        </p>
+                        <ul>
+                            <li><strong>pom.xml (Maven) ou build.gradle (Gradle) :</strong> Configuration du build</li>
+                            <li><strong>Tests unitaires :</strong> Tests JUnit avec Spring Test</li>
+                            <li><strong>Tests d'intégration :</strong> Tests avec @SpringBootTest</li>
+                            <li><strong>Application properties :</strong> Configuration par environnement (dev, test, prod)</li>
+                            <li><strong>Dockerfile :</strong> Pour la containerisation</li>
+                            <li><strong>docker-compose.yml :</strong> Pour les environnements de développement et de test</li>
+                            <li><strong>GitHub Actions workflow :</strong> Configuration du pipeline CI/CD</li>
+                        </ul>
+
+                        <h3>Build et Packaging avec Maven/Gradle</h3>
+                        <p>
+                            Spring Boot supporte à la fois Maven et Gradle comme outils de build. Les deux permettent de :
+                        </p>
+                        <ul>
+                            <li>Compiler le code source Java</li>
+                            <li>Gérer les dépendances</li>
+                            <li>Exécuter les tests</li>
+                            <li>Créer des artefacts JAR/WAR exécutables</li>
+                            <li>Publier des artefacts vers des dépôts Maven</li>
+                        </ul>
+                        <p><strong>Commandes Maven essentielles :</strong></p>
+                        <ul>
+                            <li><code>mvn clean</code> : Nettoie le répertoire target</li>
+                            <li><code>mvn compile</code> : Compile le code source</li>
+                            <li><code>mvn test</code> : Exécute les tests</li>
+                            <li><code>mvn package</code> : Crée le JAR/WAR</li>
+                            <li><code>mvn install</code> : Installe l'artefact dans le dépôt local</li>
+                            <li><code>mvn spring-boot:run</code> : Lance l'application Spring Boot</li>
+                        </ul>
+                        <p><strong>Commandes Gradle essentielles :</strong></p>
+                        <ul>
+                            <li><code>./gradlew clean</code> : Nettoie le répertoire build</li>
+                            <li><code>./gradlew build</code> : Compile, teste et crée l'artefact</li>
+                            <li><code>./gradlew test</code> : Exécute les tests</li>
+                            <li><code>./gradlew bootRun</code> : Lance l'application Spring Boot</li>
+                        </ul>
+
+                        <h3>Tests avec Spring Boot</h3>
+                        <p>
+                            Spring Boot fournit un support complet pour les tests avec Spring Test, Mockito, et JUnit 5. Les types 
+                            de tests incluent :
+                        </p>
+                        <ul>
+                            <li><strong>Tests unitaires :</strong> Testent des composants isolés avec des mocks</li>
+                            <li><strong>Tests d'intégration :</strong> Testent l'interaction entre plusieurs composants</li>
+                            <li><strong>Tests de régression :</strong> Vérifient que les fonctionnalités existantes continuent de fonctionner</li>
+                            <li><strong>Tests de performance :</strong> Vérifient les temps de réponse et la charge</li>
+                        </ul>
+                        <p>
+                            Les tests Spring Boot peuvent utiliser <code>@SpringBootTest</code> pour charger le contexte complet 
+                            de l'application, ou <code>@WebMvcTest</code> pour tester uniquement la couche web.
+                        </p>
+                    </div>
+
+                    <h2>GitHub Actions : Focus Principal</h2>
+                    <div class="bio">
+                        <h3>Introduction à GitHub Actions</h3>
+                        <p>
+                            GitHub Actions est une plateforme d'automatisation CI/CD intégrée directement dans GitHub. Elle permet 
+                            d'automatiser les workflows de développement logiciel directement depuis votre dépôt GitHub, sans 
+                            nécessiter de serveur externe.
+                        </p>
+                        <p><strong>Avantages de GitHub Actions :</strong></p>
+                        <ul>
+                            <li><strong>Intégration native :</strong> Fonctionne directement avec GitHub, pas besoin de configuration externe</li>
+                            <li><strong>Gratuit pour les projets open source :</strong> Illimité pour les dépôts publics</li>
+                            <li><strong>Configuration simple :</strong> Workflows définis en YAML dans le dépôt</li>
+                            <li><strong>Matrice de builds :</strong> Teste sur plusieurs versions de Java, systèmes d'exploitation</li>
+                            <li><strong>Marketplace d'actions :</strong> Bibliothèque riche d'actions pré-construites</li>
+                            <li><strong>Parallélisation :</strong> Exécution parallèle de jobs pour des builds plus rapides</li>
+                            <li><strong>Gestion des secrets :</strong> Stockage sécurisé des informations sensibles</li>
+                        </ul>
+
+                        <h3>Structure d'un Workflow GitHub Actions</h3>
+                        <p>
+                            Les workflows GitHub Actions sont définis dans des fichiers YAML placés dans le répertoire 
+                            <code>.github/workflows/</code>. Un workflow typique comprend :
+                        </p>
+                        <ul>
+                            <li><strong>name :</strong> Nom du workflow</li>
+                            <li><strong>on :</strong> Événements qui déclenchent le workflow (push, pull_request, etc.)</li>
+                            <li><strong>jobs :</strong> Tâches à exécuter</li>
+                            <li><strong>steps :</strong> Étapes individuelles dans chaque job</li>
+                            <li><strong>runs-on :</strong> Type de machine virtuelle à utiliser</li>
+                        </ul>
+
+                        <h3>Exemple de Workflow CI/CD pour Spring Boot</h3>
+                        <p>
+                            Voici un exemple de workflow GitHub Actions complet pour une application Spring Boot :
+                        </p>
+                        <pre style="background-color: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        java-version: [11, 17]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up JDK ${{ matrix.java-version }}
+      uses: actions/setup-java@v3
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'temurin'
+        cache: maven
+    
+    - name: Build with Maven
+      run: mvn clean compile
+    
+    - name: Run tests
+      run: mvn test
+    
+    - name: Generate test report
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Maven Tests
+        path: target/surefire-reports/*.xml
+        reporter: java-junit
+    
+    - name: Build JAR
+      run: mvn package -DskipTests
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: application-jar
+        path: target/*.jar
+
+  docker-build:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true
+        tags: username/app:latest
+
+  deploy:
+    needs: docker-build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Deploy to production
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          docker pull username/app:latest
+          docker-compose up -d</code></pre>
+
+                        <h3>Actions GitHub Actions pour Spring Boot</h3>
+                        <p>
+                            Plusieurs actions populaires sont disponibles pour les projets Spring Boot :
+                        </p>
+                        <ul>
+                            <li><strong>actions/setup-java@v3 :</strong> Configure l'environnement Java avec gestion du cache Maven/Gradle</li>
+                            <li><strong>actions/cache@v3 :</strong> Cache les dépendances Maven/Gradle pour accélérer les builds</li>
+                            <li><strong>actions/upload-artifact@v3 :</strong> Télécharge les artefacts de build</li>
+                            <li><strong>actions/download-artifact@v3 :</strong> Télécharge les artefacts dans un job ultérieur</li>
+                            <li><strong>codecov/codecov-action@v3 :</strong> Upload la couverture de code vers Codecov</li>
+                            <li><strong>sonarsource/sonarcloud-github-action :</strong> Analyse de code avec SonarCloud</li>
+                            <li><strong>docker/build-push-action@v4 :</strong> Build et push d'images Docker</li>
+                        </ul>
+
+                        <h3>Stratégies de Matrice (Matrix Strategy)</h3>
+                        <p>
+                            GitHub Actions permet de tester votre application sur plusieurs versions de Java et systèmes d'exploitation 
+                            simultanément en utilisant une stratégie de matrice :
+                        </p>
+                        <pre style="background-color: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>strategy:
+  matrix:
+    java-version: [11, 17, 21]
+    os: [ubuntu-latest, windows-latest, macos-latest]
+  fail-fast: false</code></pre>
+                        <p>
+                            Cette configuration exécutera les tests sur 9 combinaisons différentes (3 versions Java × 3 OS), permettant 
+                            de détecter les problèmes de compatibilité rapidement.
+                        </p>
+
+                        <h3>Gestion des Secrets</h3>
+                        <p>
+                            GitHub Actions fournit un système sécurisé pour gérer les secrets (mots de passe, clés API, tokens, etc.) :
+                        </p>
+                        <ul>
+                            <li>Les secrets sont stockés de manière chiffrée</li>
+                            <li>Ils ne sont jamais affichés dans les logs</li>
+                            <li>Ils sont accessibles via <code>${{ secrets.SECRET_NAME }}</code></li>
+                            <li>Ils peuvent être configurés au niveau du dépôt ou de l'organisation</li>
+                        </ul>
+                        <p>
+                            Exemples de secrets typiques pour un projet Spring Boot :
+                        </p>
+                        <ul>
+                            <li>Clés de base de données</li>
+                            <li>Tokens d'API externes</li>
+                            <li>Clés SSH pour le déploiement</li>
+                            <li>Credentials Docker Hub / Container Registry</li>
+                            <li>Certificats SSL</li>
+                        </ul>
+
+                        <h3>Conditions et Environnements</h3>
+                        <p>
+                            GitHub Actions permet de contrôler l'exécution des workflows avec des conditions :
+                        </p>
+                        <ul>
+                            <li><strong>if :</strong> Conditions pour exécuter une étape ou un job</li>
+                            <li><strong>environments :</strong> Protection des environnements de production avec approbations</li>
+                            <li><strong>concurrency :</strong> Limiter l'exécution simultanée de workflows</li>
+                        </ul>
+                        <p>
+                            Exemple d'utilisation des environnements pour protéger la production :
+                        </p>
+                        <pre style="background-color: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>deploy-production:
+  runs-on: ubuntu-latest
+  environment: production
+  steps:
+    - name: Deploy
+      run: ./deploy.sh</code></pre>
+                    </div>
+
+                    <h2>Bonnes Pratiques CI/CD</h2>
+                    <div class="bio">
+                        <h3>Stratégies de Branches</h3>
+                        <p>
+                            Une stratégie de branches bien définie est essentielle pour un CI/CD efficace :
+                        </p>
+                        <ul>
+                            <li><strong>main/master :</strong> Branche principale, toujours déployable en production</li>
+                            <li><strong>develop :</strong> Branche de développement, déploiement automatique en staging</li>
+                            <li><strong>feature/* :</strong> Branches de fonctionnalités, tests automatiques uniquement</li>
+                            <li><strong>release/* :</strong> Branches de release, tests complets avant production</li>
+                            <li><strong>hotfix/* :</strong> Branches de correction urgente, déploiement rapide en production</li>
+                        </ul>
+
+                        <h3>Tests dans le Pipeline</h3>
+                        <p>
+                            Les tests doivent être organisés en plusieurs niveaux dans le pipeline :
+                        </p>
+                        <ul>
+                            <li><strong>Tests unitaires :</strong> Exécutés en premier, très rapides</li>
+                            <li><strong>Tests d'intégration :</strong> Vérifient l'interaction entre composants</li>
+                            <li><strong>Tests de régression :</strong> Vérifient que les fonctionnalités existantes fonctionnent toujours</li>
+                            <li><strong>Tests de performance :</strong> Vérifient les temps de réponse</li>
+                            <li><strong>Tests de sécurité :</strong> Détection de vulnérabilités</li>
+                        </ul>
+                        <p>
+                            Le principe du "test pyramid" suggère d'avoir beaucoup de tests unitaires rapides, moins de tests 
+                            d'intégration, et encore moins de tests end-to-end lents.
+                        </p>
+
+                        <h3>Gestion des Environnements</h3>
+                        <p>
+                            Les applications doivent être testées dans plusieurs environnements avant la production :
+                        </p>
+                        <ul>
+                            <li><strong>Development :</strong> Environnement local des développeurs</li>
+                            <li><strong>Integration :</strong> Environnement pour les tests d'intégration automatisés</li>
+                            <li><strong>Staging :</strong> Environnement de pré-production, miroir de la production</li>
+                            <li><strong>Production :</strong> Environnement réel utilisé par les utilisateurs finaux</li>
+                        </ul>
+                        <p>
+                            Chaque environnement doit avoir sa propre configuration (base de données, services externes, etc.) 
+                            gérée via des variables d'environnement ou des profils Spring.
+                        </p>
+
+                        <h3>Rollback et Recovery</h3>
+                        <p>
+                            Un pipeline CI/CD robuste doit inclure des stratégies de rollback :
+                        </p>
+                        <ul>
+                            <li><strong>Versioning :</strong> Taguer chaque déploiement avec un numéro de version</li>
+                            <li><strong>Blue-Green Deployment :</strong> Maintenir deux environnements identiques pour basculer rapidement</li>
+                            <li><strong>Canary Releases :</strong> Déployer progressivement à un sous-ensemble d'utilisateurs</li>
+                            <li><strong>Database Migrations :</strong> Gérer les migrations de base de données de manière réversible</li>
+                        </ul>
+
+                        <h3>Monitoring et Observabilité</h3>
+                        <p>
+                            Le monitoring est crucial pour détecter les problèmes en production :
+                        </p>
+                        <ul>
+                            <li><strong>Logs :</strong> Centralisation et agrégation des logs</li>
+                            <li><strong>Metrics :</strong> Métriques de performance (temps de réponse, taux d'erreur, etc.)</li>
+                            <li><strong>Tracing :</strong> Suivi des requêtes à travers les microservices</li>
+                            <li><strong>Health Checks :</strong> Endpoints de santé pour vérifier l'état de l'application</li>
+                        </ul>
+                        <p>
+                            Spring Boot Actuator fournit des endpoints de monitoring prêts à l'emploi pour la santé de l'application, 
+                            les métriques, et plus encore.
+                        </p>
+                    </div>
+
+                    <h2>Containerisation avec Docker</h2>
+                    <div class="bio">
+                        <h3>Dockerfile pour Spring Boot</h3>
+                        <p>
+                            Containeriser une application Spring Boot avec Docker permet d'assurer la cohérence entre les 
+                            environnements. Voici un exemple de Dockerfile optimisé :
+                        </p>
+                        <pre style="background-color: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code># Stage 1: Build
+FROM maven:3.8.6-eclipse-temurin-17 AS build
+WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]</code></pre>
+                        <p>
+                            Ce Dockerfile utilise un build multi-stage pour créer une image finale légère, ne contenant que 
+                            le JAR et le runtime Java.
+                        </p>
+
+                        <h3>Intégration Docker dans GitHub Actions</h3>
+                        <p>
+                            GitHub Actions peut automatiquement builder et publier des images Docker vers des registries comme 
+                            Docker Hub, GitHub Container Registry, ou AWS ECR. Cela permet de déployer facilement des applications 
+                            containerisées.
+                        </p>
+                    </div>
+
+                    <h2>Automatisation Avancée</h2>
+                    <div class="bio">
+                        <h3>Déploiement Automatique</h3>
+                        <p>
+                            Le déploiement automatique peut être configuré pour différents environnements :
+                        </p>
+                        <ul>
+                            <li><strong>Staging :</strong> Déploiement automatique après chaque merge dans develop</li>
+                            <li><strong>Production :</strong> Déploiement automatique ou manuel après merge dans main</li>
+                            <li><strong>Feature Branches :</strong> Déploiement dans des environnements éphémères pour les tests</li>
+                        </ul>
+
+                        <h3>Notifications et Alertes</h3>
+                        <p>
+                            Les workflows GitHub Actions peuvent envoyer des notifications :
+                        </p>
+                        <ul>
+                            <li>Slack pour les échecs de build</li>
+                            <li>Email pour les déploiements en production</li>
+                            <li>Discord pour les mises à jour de statut</li>
+                            <li>Microsoft Teams pour les rapports de build</li>
+                        </ul>
+
+                        <h3>Analyse de Code Automatique</h3>
+                        <p>
+                            L'analyse statique de code peut être intégrée dans le pipeline :
+                        </p>
+                        <ul>
+                            <li><strong>SonarCloud :</strong> Analyse de qualité de code et détection de bugs</li>
+                            <li><strong>CodeQL :</strong> Analyse de sécurité par GitHub</li>
+                            <li><strong>Checkstyle / SpotBugs :</strong> Vérification du style de code et détection de bugs</li>
+                            <li><strong>OWASP Dependency Check :</strong> Détection de vulnérabilités dans les dépendances</li>
+                        </ul>
+                    </div>
+
+                    <h2>Objectifs d'Apprentissage</h2>
+                    <div class="bio">
+                        <p>
+                            À l'issue de ce cours, les étudiants seront capables de :
+                        </p>
+                        <ul>
+                            <li>Comprendre les concepts et avantages du CI/CD</li>
+                            <li>Configurer des pipelines CI/CD avec GitHub Actions</li>
+                            <li>Automatiser le build, les tests, et le déploiement d'applications Spring Boot</li>
+                            <li>Utiliser les stratégies de matrice pour tester sur plusieurs environnements</li>
+                            <li>Gérer les secrets et la configuration de manière sécurisée</li>
+                            <li>Containeriser des applications Spring Boot avec Docker</li>
+                            <li>Intégrer l'analyse de code et les tests de sécurité dans le pipeline</li>
+                            <li>Implémenter des stratégies de déploiement (blue-green, canary)</li>
+                            <li>Configurer le monitoring et l'observabilité</li>
+                            <li>Appliquer les meilleures pratiques de CI/CD dans des projets réels</li>
+                        </ul>
+                    </div>
+
+                    <h2>Évaluation</h2>
+                    <div class="bio">
+                        <p>
+                            L'évaluation du cours comprend des projets pratiques où les étudiants doivent :
+                        </p>
+                        <ul>
+                            <li>Configurer un pipeline CI/CD complet pour une application Spring Boot</li>
+                            <li>Implémenter des tests automatisés (unitaires, d'intégration)</li>
+                            <li>Configurer GitHub Actions avec des workflows multi-environnements</li>
+                            <li>Containeriser l'application avec Docker</li>
+                            <li>Automatiser le déploiement vers un environnement de staging</li>
+                            <li>Intégrer l'analyse de code et les tests de sécurité</li>
+                            <li>Documenter le pipeline et les stratégies de déploiement</li>
+                        </ul>
+                        <p>
+                            Les étudiants sont attendus de démontrer leur compréhension des concepts CI/CD, leur capacité à 
+                            configurer des pipelines automatisés, et leur maîtrise des outils modernes de développement continu 
+                            à travers leurs implémentations pratiques.
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p>
+                            <a href="../courses.html">← Retour aux Cours</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
