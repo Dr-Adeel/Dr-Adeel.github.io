@@ -125,7 +125,7 @@ a:focus {
   display: inline-block;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   letter-spacing: 0.01em;
   transition: all 0.2s ease;
   border-bottom: 3px solid transparent;
@@ -291,7 +291,7 @@ ul li:before {
   
   .navigation a {
     padding: 1rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
   
   .main {
@@ -312,7 +312,7 @@ ul li:before {
 @media (max-width: 480px) {
   .navigation a {
     padding: 0.875rem 0.75rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
   
   h1 {
