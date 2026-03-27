@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bases de Données Avancées - JDBC - Adeel Ahmad</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
+    <link rel="stylesheet" href="../css/evas_style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navigation">
+        <div class="container">
+            <a href="../index.html">Accueil</a>
+            <a href="../courses.html">Cours</a>
+            <a href="../research.html">Recherche</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../projects.html">Projets</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h1>Bases de Données Avancées — JDBC</h1>
+                    <p style="margin-top: 1rem; color: var(--text-light);">
+                        Connectivité Java vers MySQL et Oracle
+                    </p>
+                </div>
+                
+                <div class="section-card">
+                    <h2>Vue d'ensemble du cours</h2>
+                    <div class="bio">
+                        <p>
+                            Ce cours présente <strong>JDBC</strong> (Java Database Connectivity) et les bonnes pratiques de
+                            connectivité entre une application Java et un SGBD relationnel. L'objectif est de comprendre et
+                            maîtriser le cycle complet : configuration du driver, gestion des connexions, exécution de requêtes
+                            SQL, traitement des résultats, transactions, et gestion des erreurs.
+                        </p>
+                        <p>
+                            Les exemples et manipulations couvrent principalement <strong>MySQL</strong> et <strong>Oracle</strong>,
+                            en mettant l'accent sur des cas concrets (CRUD, recherche, pagination, transactions) et sur la
+                            sécurisation des accès (requêtes paramétrées, gestion des droits, etc.).
+                        </p>
+                    </div>
+
+                    <h2>Contenus abordés</h2>
+                    <div class="bio">
+                        <ul>
+                            <li><strong>Rappels SQL</strong> : SELECT, INSERT, UPDATE, DELETE, jointures, agrégation</li>
+                            <li><strong>Architecture d'accès aux données</strong> : séparation DAO / service, gestion des couches</li>
+                            <li><strong>JDBC Essentials</strong> : Driver, URL JDBC, Connection, Statement, PreparedStatement, ResultSet</li>
+                            <li><strong>PreparedStatement</strong> : requêtes paramétrées, prévention des injections SQL</li>
+                            <li><strong>Transactions</strong> : auto-commit, commit/rollback, niveaux d'isolation (notions)</li>
+                            <li><strong>Gestion des ressources</strong> : try-with-resources, fermeture, pooling (notions)</li>
+                            <li><strong>Gestion des exceptions</strong> : SQLException, codes d'erreur, stratégie de logging</li>
+                            <li><strong>Différences MySQL / Oracle</strong> : drivers, syntaxe selon les cas, typage, séquences (notions)</li>
+                        </ul>
+                    </div>
+
+                    <h2>MySQL et Oracle : connexion et configuration</h2>
+                    <div class="bio">
+                        <h3>URL JDBC (exemples)</h3>
+                        <ul>
+                            <li><strong>MySQL</strong> : <code>jdbc:mysql://host:3306/nom_base</code></li>
+                            <li><strong>Oracle</strong> : <code>jdbc:oracle:thin:@host:1521/nom_service</code></li>
+                        </ul>
+                        <p>
+                            Le cours détaille la configuration du driver, les paramètres utiles (timezone/SSL selon contexte),
+                            et l'organisation des informations sensibles (identifiants/mots de passe) via variables d'environnement
+                            ou fichiers de configuration.
+                        </p>
+                    </div>
+
+                    <h2>Exercices pratiques</h2>
+                    <div class="bio">
+                        <h3>TD / TP 1 — JDBC (Java ↔ SGBD)</h3>
+                        <p>
+                            Premier ensemble d'exercices pratiques pour prendre en main JDBC et réaliser des opérations
+                            de base sur MySQL et/ou Oracle.
+                        </p>
+                        <p style="margin-top: 1.5rem;">
+                            <a href="../files/TD1_jdbc.pdf" target="_blank" rel="noopener" style="font-size: 1.1rem; color: var(--primary-color);">
+                                📄 Télécharger le sujet du TP/TD 1 JDBC (PDF)
+                            </a>
+                        </p>
+                        <p style="margin-top: 0.5rem; color: var(--text-light); font-size: 0.9rem;">
+                            D'autres sujets d'exercices seront ajoutés ici au fur et à mesure.
+                        </p>
+                    </div>
+
+                    <h2>Objectifs d'apprentissage</h2>
+                    <div class="bio">
+                        <ul>
+                            <li>Mettre en place une connexion JDBC vers MySQL et Oracle</li>
+                            <li>Exécuter des requêtes SQL avec <code>PreparedStatement</code> et traiter un <code>ResultSet</code></li>
+                            <li>Gérer correctement les transactions (commit/rollback) et les ressources</li>
+                            <li>Structurer une couche d'accès aux données (DAO) de manière maintenable</li>
+                            <li>Appliquer des bonnes pratiques de sécurité et de robustesse</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <p>
+                            <a href="../courses.html">← Retour aux Cours</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
