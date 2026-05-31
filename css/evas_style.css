@@ -117,6 +117,14 @@ a:focus {
   padding: 0 2rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.navigation-social {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .navigation a {
@@ -287,6 +295,10 @@ ul li:before {
   
   .navigation .container {
     padding: 0 1rem;
+  }
+
+  .navigation-social {
+    margin-left: auto;
   }
   
   .navigation a {
