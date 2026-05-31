@@ -117,14 +117,23 @@ a:focus {
   padding: 0 2rem;
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+.navigation-menu {
+  display: flex;
+  flex: 1 1 auto;
   flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
 }
 
 .navigation-social {
   margin-left: auto;
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex: 0 0 auto;
   gap: 0.25rem;
   padding-left: 1.25rem;
   border-left: 1px solid rgba(255, 255, 255, 0.28);
@@ -136,6 +145,11 @@ a:focus {
   align-items: center;
   justify-content: center;
   line-height: 0;
+  color: #ffffff;
+}
+
+.navigation-social a.nav-social-link:hover {
+  color: #ffffff;
 }
 
 .navigation-social .nav-icon {
@@ -164,7 +178,7 @@ a:focus {
   border-bottom-color: var(--accent-color);
 }
 
-.navigation a:first-child {
+.navigation-menu > a:first-child {
   margin-left: -1.5rem;
 }
 
