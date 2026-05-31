@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+/* Undo Skeleton root font scaling; site typography uses px/rem in this file */
+html {
+  font-size: 100%;
+}
+
 body {
   color: var(--text-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -164,6 +169,10 @@ a:focus {
   flex-shrink: 0;
 }
 
+.navigation-social .nav-icon {
+  overflow: visible;
+}
+
 .navigation-social .nav-icon path {
   fill: #ffffff;
 }
@@ -199,8 +208,31 @@ a:focus {
   min-height: calc(100vh - 60px);
 }
 
-.container {
+/*
+ * Override Skeleton .container (width 80%, max-width 960px).
+ * Use .navigation-inner in the nav bar, not .container.
+ */
+.container.main {
+  position: relative;
+  width: 100%;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 400px) {
+  .container.main {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 550px) {
+  .container.main {
+    width: 100%;
+  }
 }
 
 /* Profile section */
@@ -291,6 +323,14 @@ a:focus {
   vertical-align: top;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-light);
+}
+
+.supervision-table th:first-child,
+.supervision-table td:first-child,
+.supervision-table th:last-child,
+.supervision-table td:last-child {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .supervision-table th {
