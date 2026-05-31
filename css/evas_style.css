@@ -125,6 +125,23 @@ a:focus {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  gap: 0.25rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.navigation-social a.nav-social-link {
+  padding: 1.1rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.navigation-social .nav-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
 }
 
 .navigation a {
